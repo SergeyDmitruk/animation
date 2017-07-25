@@ -61,4 +61,12 @@ body {
 }
 svg{
     padding: 20px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.svg__logo{
+    position: relative;
+    width: 300px;
+    height: 300px;
 }

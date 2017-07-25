@@ -6,16 +6,16 @@ var tl = new TimelineMax({
 
 tl
     .from($('#firstCircle'), 2 , {
-        rotation: 360,
-        transformOrigin: "50% 50%"
+        rotation: '+=360',
+        transformOrigin: "center 50%"
     })
     .to($('#secondCircle'), 2, {
         rotation: 360,
-        transformOrigin: "50% 50%"
+        transformOrigin: "center 50px"
     }, "-=2")
     .from($('#thirdCircle'), 2, {
         rotation: 360,
-        transformOrigin: "50% 50%"
+        transformOrigin: "center -50px"
     }, "-=2")
     .to($('#coreCircle'), 3,{
         scale: 100,
