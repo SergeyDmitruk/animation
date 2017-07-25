@@ -6,11 +6,11 @@ var tl = new TimelineMax({
 
 tl
     .from($('.word__b'), 3 , {
-        x: '-100%'
+        x: '-150%'
     },"-=3")
     .from($('.word__a'), 3 , {
-        x: '100px'
-    }, '-=4')
+        x: '150%'
+    }, '-=3')
     .from($('.word__o'), 2 , {
         rotation: 18,
         transformOrigin: '100% 50%'
