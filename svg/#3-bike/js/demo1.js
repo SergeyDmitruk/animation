@@ -13,7 +13,7 @@ fillAnimationDelay = 0.5;//def(0.5) delay in second before the fill start to fil
 /* note that only half of the path fill get animated ("#mainpaths path:nth-child(odd)"), other half is always transparent */
 
 /* when entranceAnimationDuration is over , the bike "landed" at page center and we start the shaking with timelineShacking.play(); */
-delayBeforeAnimationSlow = 20000;//def(2000) delay in ms before we kill the main animation and we freeze / fill everything
+delayBeforeAnimationSlow = 2000;//def(2000) delay in ms before we kill the main animation and we freeze / fill everything
 
 /* after delayBeforeAnimationSlow is over we stop the main animation with timelineMainAnimation.kill(); and we start the last timelines */
 // timelineToFullStrokes.play() the
@@ -48,7 +48,7 @@ const timelineEntrance = new TimelineMax({
 timelineEntrance.fromTo("#bike", entranceAnimationDuration, {
         rotation: -50, left: "0", top: "0", xPercent: -100, yPercent: -100
     },
-    { rotation: -20, left: "50%", top: "50%", xPercent: -50, yPercent: -50, ease: Back.easeOut.config(1) });
+    { rotation: -50, left: "50%", top: "50%", xPercent: -50, yPercent: -50 });
 
 
 /* wheels animation value */
@@ -104,8 +104,8 @@ function startAnimation(currentdemo) {
         bike.classList.remove(previousClass);
         previousClass = currentdemo;
         bike.classList.add(currentdemo);
-        timelineMainAnimation.play(19245);
-        timelineMainFillAnimation.play(19245);
+        timelineMainAnimation.play(9245);
+        timelineMainFillAnimation.play(9245);
         timelineWheels.play(0);
         timelineWheels.timeScale(1);
         timelineEntrance.play(0);
@@ -133,7 +133,7 @@ function triggerAfterEntrance() {
     timelineShacking.play(0);
     preslowingtimeout = window.setTimeout(function () {
         timelineMainAnimation.pause();
-        // timelineMainFillAnimation.pause();
+        timelineMainFillAnimation.pause();
         TweenLite.to(timescale, timeUntilAnimationOver, { value: 0, ease: Power4.easeInOut });
         for (var i = 0; i <= timeUntilAnimationOver; i += timeUntilAnimationOver / 10) {
 
